@@ -10,9 +10,9 @@ variable "AWS" {
   })
 }
 
-variable "vpc" {
+variable "vpcs" {
   description = "Vpc Configuration"
-  type = object({
+  type = list(object({
     name = string
     cidr = string
     igw_name = string
@@ -24,7 +24,7 @@ variable "vpc" {
     private_subnet_name = string
     subnet_mask = string
     sg_name = string
-  })
+  }))
 }
 
 variable "rds" {
